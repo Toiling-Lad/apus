@@ -41,7 +41,7 @@ This will start the process of "ejecting" from Create React Native App's build s
 
 If you find any problems, please [open an issue](https://github.com/Toiling-Lad/apus/issues/new) or submit a fix as a pull request.
 
-We welcome new features, but for large changes let's discuss first to make sure the changes can be accepted and integrated smoothly.
+New features are welcome, but for large changes let's discuss first to make sure the changes can be accepted and integrated smoothly.
 
 ## License
 

@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React Native App](https://github.com/
 ## Table of Contents
 
 * [ Getting Started](#getting-started)
+* [ Contributing ](#contributing)
+* [ License ](#license)
 
 ## Getting Started
 
@@ -13,6 +15,8 @@ $ git clone https://github.com/Toiling-Lad/apus.git
 # Go inside the project directory
 $ cd apus
 
+# Start the project in develop mode
+$ npm run develop
 ```
 
 #### `npm start`
@@ -38,3 +42,14 @@ Like `npm start`, but also attempts to open your app on a connected Android devi
 This will start the process of "ejecting" from Create React Native App's build scripts. You'll be asked a couple of questions about how you'd like to build your project.
 
 **Warning:** Running eject is a **permanent** action. Please use a version control system, such as git, so you can revert back if necessary. An ejected app will require you to have an [Xcode and/or Android Studio environment](https://facebook.github.io/react-native/docs/getting-started.html) set up.
+
+
+## Contributing
+
+If you find any problems, please [open an issue](https://github.com/Toiling-Lad/apus/issues/new) or submit a fix as a pull request.
+
+We welcome new features, but for large changes let's discuss first to make sure the changes can be accepted and integrated smoothly.
+
+## License
+
+[MIT License](LICENSE)

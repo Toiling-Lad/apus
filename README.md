@@ -8,22 +8,15 @@ This project was bootstrapped with [Create React Native App](https://github.com/
 
 ## Getting Started
 
-```
-# Get the project on your computer
-$ git clone https://github.com/Toiling-Lad/apus.git
+#### `git clone https://github.com/Toiling-Lad/apus.git`
 
-# Go inside the project directory
-$ cd apus
-
-# Start the project in develop mode
-$ npm run develop
-```
+Get the project on your computer and go inside the project directory
 
 #### `npm start`
 
 Runs your app in development mode with an interactive prompt. To run it without a prompt, use the `--no-interactive` flag.
 
-Open it in the [Expo app](https://expo.io) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
+Install the [Expo app](https://expo.io) on your iOS or Android phone, and use the QR code in the terminal to open your app. Find the QR scanner on the Projects tab of the app. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
 
 #### `npm test`
 

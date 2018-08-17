@@ -9,9 +9,16 @@ export const initialState = { // Exporting it for test purposes
 export default function repoReducer(state = initialState, action) {
   switch (action.type) {
     case GET_REPOS:
-      return { ...state, loading: true };
+      return { 
+        ...state, 
+        loading: true 
+      };
     case GET_REPOS_SUCCESS:
-      return { ...state, loading: false, repos: action.payload.data };
+      return { 
+        ...state, 
+        loading: false, 
+        repos: action.payload.data 
+      };
     case GET_REPOS_FAIL:
       return {
         ...state,

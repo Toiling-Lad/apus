@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import RepoItem from './RepoItem';
 
 import { listRepos } from '../reducers/repoReducer';
 
@@ -8,31 +9,24 @@ class RepoList extends Component {
   componentDidMount() {
     this.props.listRepos('Toiling-Lad');
   }
-  renderItem = ({ item }) => (
-    <View style={styles.item}>
-      <Text>{item.name}</Text>
-    </View>
-  );
+
   render() {
     const { repos } = this.props;
     return (
       <FlatList
         styles={styles.container}
         data={repos}
-        renderItem={this.renderItem}
+        renderItem={(repo) => ( 
+          <RepoItem {...repo}/>
+        )}
       />
-    );
-  }
+    )}
+
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  item: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
   }
 });
 

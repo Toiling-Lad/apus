@@ -20,7 +20,7 @@ Install the [Expo app](https://expo.io) on your iOS or Android phone, and use th
 
 #### `npm test`
 
-Runs the [jest](https://github.com/facebook/jest) test runner on your tests.
+Runs the [jest](https://github.com/facebook/jest) test runner on your tests. Check [jest-expo](https://github.com/expo/jest-expo).
 
 #### `npm run ios`
 

@@ -5,7 +5,7 @@ import { Provider, connect } from 'react-redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
-import reducer from './reducer';
+import repoReducer from './reducers/repoReducer';
 import RepoList from './RepoList';
 
 const client = axios.create({
@@ -13,7 +13,7 @@ const client = axios.create({
   responseType: 'json'
 });
 
-const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
+const store = createStore(repoReducer, applyMiddleware(axiosMiddleware(client)));
 
 export default class App extends Component {
   render() {

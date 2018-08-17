@@ -1,3 +1,4 @@
 node_modules/
-.vscode/
 .expo/
+.vscode/
+__tests__/__snapshots__/

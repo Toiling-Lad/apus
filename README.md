@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
+[![Build Status](https://travis-ci.org/Toiling-Lad/apus.svg?branch=master)](https://travis-ci.org/Toiling-Lad/apus)
+
 ## Table of Contents
 
 * [ Getting Started](#getting-started)

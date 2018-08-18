@@ -3,9 +3,9 @@ import repoReducer, {initialState, GET_REPOS, GET_REPOS_SUCCESS, GET_REPOS_FAIL}
 
  
 
-it('returns the same state on an unhandled action', () => {
-  expect(repoReducer(initialState, {type: '_NULL'})).toMatchSnapshot();
-});
+// it('returns the same state on an unhandled action', () => {
+//   expect(repoReducer(initialState, {type: '_NULL'})).toMatchSnapshot();
+// });
 
 // Thease need to be fixed appropriately.
 // it('handles GET_REPOS action', () => {

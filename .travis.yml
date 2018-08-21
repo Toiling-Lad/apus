@@ -1,5 +1,6 @@
 sudo: false
-language: node_js
+language: 
+  - node_js
 node_js:
   - "stable"
 cache:
@@ -9,10 +10,11 @@ install:
   - npm install
   - npm i -g exp
 jobs:
-  - stage: test
-      script: 
-        npm test
-  - stage: publish
-      script: 
-        exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-        exp publish
+  include:
+    - stage: test
+        script: 
+          - npm test
+    - stage: publish
+        script: 
+          - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+          - exp publish

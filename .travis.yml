@@ -11,4 +11,4 @@ install:
 script:
   - npm test
   - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-  - npm publish
+  - exp publish

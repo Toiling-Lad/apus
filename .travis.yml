@@ -3,18 +3,31 @@ language:
   - node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - node_modules
-install:
-  - npm i -g exp
-  - npm install
-jobs:
-  include:
-    - stage: test
-      script:
-        - npm test
-    - stage: publish
-      script:
-        - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-        - exp publish
+pipelines:
+  default:
+    - step:
+      name: Validate code
+      cache:
+        directories:
+          - node_modules
+      install:
+        - npm i -g exp
+        - npm install
+  branches:
+    develop:
+      - step:
+        name: Validate code
+        cache:
+          directories:
+            - node_modules
+        install:
+          - npm i -g exp
+          - npm install
+      - step: test
+        script:
+          - npm test
+      - step: publish to expo.io
+        trigger: manual
+        script:
+          - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+          - exp publish

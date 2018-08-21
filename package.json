@@ -1,7 +1,6 @@
 {
   "name": "apus",
   "version": "0.1.0",
-  "private": true,
   "devDependencies": {
     "jest-expo": "~27.0.0",
     "prettier": "^1.14.2",

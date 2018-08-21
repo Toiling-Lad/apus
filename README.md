@@ -20,9 +20,11 @@ Runs your app in development mode with an interactive prompt. To run it without 
 
 Install the [Expo app](https://expo.io) on your iOS or Android phone, and use the QR code in the terminal to open your app. Find the QR scanner on the Projects tab of the app. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
 
+The command also runs [npm run prettier](#npm-prettier) in order to assure code quality.
+
 #### `npm test`
 
-Runs the [jest](https://github.com/facebook/jest) test runner on your tests. Check [jest-expo](https://github.com/expo/jest-expo).
+Runs the [jest](https://github.com/facebook/jest) test runner on your tests. Rules can be found in `pakage.json` and check [jest-expo](https://github.com/expo/jest-expo) for more information.
 
 #### `npm run ios`
 
@@ -38,6 +40,10 @@ This will start the process of "ejecting" from Create React Native App's build s
 
 **Warning:** Running eject is a **permanent** action. Please use a version control system, such as git, so you can revert back if necessary. An ejected app will require you to have an [Xcode and/or Android Studio environment](https://facebook.github.io/react-native/docs/getting-started.html) set up.
 
+#### `npm run prettier`
+
+[Prettier](https://github.com/prettier/prettier) is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+Rules can be found in `pakage.json`
 
 ## Contributing
 

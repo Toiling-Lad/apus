@@ -20,4 +20,5 @@ jobs:
         - exp publish
     - stage: build .apk
       script:
+        - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
         - exp build:android

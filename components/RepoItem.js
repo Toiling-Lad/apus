@@ -1,14 +1,13 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
-const RepoItem = ({item}) => {
-
-  const { name, id, stargazers_count } = item;
+const RepoItem = ({ item }) => {
+  const { name, id, stargazers_count } = item
 
   return (
     <View style={styles.item}>
       <Text style={styles.title}>{name}</Text>
-      <Text >{id}</Text>
+      <Text>{id}</Text>
       <Text style={styles.stars}>{`${stargazers_count} stars`}</Text>
     </View>
   )
@@ -23,11 +22,11 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: 'bold',
-    paddingBottom: 4,
+    paddingBottom: 4
   },
   stars: {
-    paddingBottom: 8,
-  },
-});
+    paddingBottom: 8
+  }
+})
 
-export default RepoItem;
+export default RepoItem

@@ -9,5 +9,6 @@ install:
   - npm install
 script:
   - npm test
-  - npm login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+  - npm adduser --username $EXPO_USERNAME --password $EXPO_PASSWORD
+  - npm whoami
   - npm publish

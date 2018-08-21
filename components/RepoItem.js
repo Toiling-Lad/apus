@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 4
   },
   stars: {
-    paddingBottom: 8
+    paddingBottom: 7
   }
 })
 

@@ -11,8 +11,8 @@ install:
 jobs:
   - stage: test
       script: 
-        - npm test
+        npm test
   - stage: publish
       script: 
-        - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-        - exp publish
+        exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+        exp publish

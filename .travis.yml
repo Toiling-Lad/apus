@@ -3,7 +3,8 @@ language:
   - node_js
 node_js:
   - "stable"
-
+install:
+  - npm i -g exp
 jobs:
   include:
     - stage: install
@@ -12,7 +13,6 @@ jobs:
           - node_modules
       script:
         - npm install
-        - npm i -g exp
     - stage: test
       script:
         - npm test

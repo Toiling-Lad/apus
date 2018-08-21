@@ -7,8 +7,8 @@ cache:
     - node_modules
 install:
   - npm install
+  - npm i -g exp
 script:
   - npm test
-  - npm adduser --username $EXPO_USERNAME --password $EXPO_PASSWORD
-  - npm whoami
+  - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
   - npm publish

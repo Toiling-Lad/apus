@@ -8,7 +8,11 @@ cache:
 install:
   - npm install
   - npm i -g exp
-script:
-  - npm test
-  - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-  - exp publish
+jobs:
+  - stage: "Test"
+      script: 
+        - npm test
+  - stage: "Publish"
+      script: 
+        - exp login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+        - exp publish

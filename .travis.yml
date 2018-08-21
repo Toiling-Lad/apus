@@ -3,14 +3,16 @@ language:
   - node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - node_modules
-install:
-  - npm install
-  - npm i -g exp
+
 jobs:
   include:
+    - stage: install
+      cache:
+        directories:
+          - node_modules
+      script:
+        - npm install
+        - npm i -g exp
     - stage: test
       script:
         - npm test

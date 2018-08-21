@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "apus",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -15,7 +15,9 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "prettier": "prettier --write '**/*.js'"
+    "prettier": "prettier --write '**/*.js'",
+    "publish": "exp publish"
+
   },
   "jest": {
     "preset": "jest-expo"

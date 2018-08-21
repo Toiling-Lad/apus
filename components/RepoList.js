@@ -6,6 +6,7 @@ import RepoItem from './RepoItem';
 import { listRepos } from '../reducers/repoReducer';
 
 class RepoList extends Component {
+
   componentDidMount() {
     this.props.listRepos('Toiling-Lad');
   }
@@ -16,12 +17,12 @@ class RepoList extends Component {
       <FlatList
         styles={styles.container}
         data={repos}
+        keyExtractor = {(item, index) => item.id.toString()}
         renderItem={(repo) => ( 
           <RepoItem {...repo}/>
         )}
       />
     )}
-
 }
 
 const styles = StyleSheet.create({

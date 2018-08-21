@@ -9,5 +9,5 @@ install:
   - npm install
 script:
   - npm test
-  - expo login --username $EXPO_USERNAME --password $EXPO_PASSWORD
+  - npm login --username $EXPO_USERNAME --password $EXPO_PASSWORD
   - npm publish

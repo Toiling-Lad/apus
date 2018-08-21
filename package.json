@@ -16,7 +16,9 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "prettier": "prettier --write '**/*.js'",
-    "publish": "exp publish"
+    "publish": "exp publish",
+    "build:android": "exp build:android",
+    "build:ios": "exp build:ios" 
 
   },
   "jest": {

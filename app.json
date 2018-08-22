@@ -6,7 +6,7 @@
    "sdkVersion": "29.0.0",
    "android": {
       "versionCode": 2,
-      "package": "com.app.apus",
+      "package": "com.apus",
       "permissions": []
    }
   }

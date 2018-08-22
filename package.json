@@ -1,6 +1,11 @@
 {
   "name": "apus",
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Toiling-Lad/apus.git"
+  },
   "devDependencies": {
     "jest-expo": "~27.0.0",
     "prettier": "^1.14.2",
@@ -17,8 +22,7 @@
     "prettier": "prettier --write '**/*.js'",
     "publish": "exp publish",
     "build:android": "exp build:android",
-    "build:ios": "exp build:ios" 
-
+    "build:ios": "exp build:ios"
   },
   "jest": {
     "preset": "jest-expo"

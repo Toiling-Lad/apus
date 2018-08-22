@@ -5,7 +5,13 @@
    "description": "Project can be found from here: https://github.com/Toiling-Lad/apus",
    "sdkVersion": "29.0.0",
    "android": {
-     "package": "com.apus"
+     "package": "com.apus",
+     "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_PHONE_STATE",
+        "READ_CONTACTS"
+     ]
    }
   }
 }

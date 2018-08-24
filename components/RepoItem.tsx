@@ -1,7 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const RepoItem = ({ item }) => {
+export interface IRepoItem {
+  name: string
+  id: number
+  stargazers_count: number
+}
+
+const RepoItem = (item: IRepoItem) => {
   const { name, id, stargazers_count } = item
 
   return (

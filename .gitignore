@@ -2,3 +2,4 @@ node_modules/
 .expo/
 .vscode/
 __tests__/__snapshots__/
+.jest/

@@ -2,12 +2,34 @@ export const GET_REPOS = 'my-awesome-app/repos/LOAD'
 export const GET_REPOS_SUCCESS = 'my-awesome-app/repos/LOAD_SUCCESS'
 export const GET_REPOS_FAIL = 'my-awesome-app/repos/LOAD_FAIL'
 
-export const initialState = {
-  // Exporting it for test purposes
+export interface IInitialState {
+  repos: Array<any>
+}
+
+export interface IRepoReducer {
+  loading: boolean
+  repos: any[]
+  error?: string
+}
+
+export interface IListRepos {
+  type: string
+  payload: {
+    request: {
+      url: string
+    }
+  }
+}
+
+// Teporary until moved higher
+export const initialState: IInitialState = {
   repos: []
 }
 
-export default function repoReducer(state = initialState, action) {
+export default function repoReducer(
+  state = initialState,
+  action: any
+): IRepoReducer {
   switch (action.type) {
     case GET_REPOS:
       return {
@@ -27,11 +49,14 @@ export default function repoReducer(state = initialState, action) {
         error: 'Error while fetching repositories'
       }
     default:
-      return state
+      return {
+        ...state,
+        loading: true
+      }
   }
 }
 
-export function listRepos(user) {
+export function listRepos(user: string): IListRepos {
   return {
     type: GET_REPOS,
     payload: {

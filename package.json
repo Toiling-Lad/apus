@@ -7,10 +7,19 @@
     "url": "git://github.com/Toiling-Lad/apus.git"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.4.11",
+    "@types/react-native": "^0.56.10",
+    "@types/react-redux": "^6.0.6",
+    "@types/react-test-renderer": "^16.0.2",
     "jest-expo": "~27.0.0",
     "prettier": "^1.14.2",
+    "react-addons-test-utils": "^15.6.2",
     "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.3.1"
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "16.3.1",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -19,13 +28,28 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "prettier": "prettier --write '**/*.js'",
+    "prettier": "prettier --write '**/*.tsx'",
     "publish": "exp publish",
     "build:android": "exp build:android",
     "build:ios": "exp build:ios"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
   },
   "prettier": {
     "jsxBracketSameLine": true,

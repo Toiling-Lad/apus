@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { createStore, applyMiddleware } from 'redux'
-import { Provider, connect } from 'react-redux'
+import { Provider } from 'react-redux'
 import axios from 'axios'
 import axiosMiddleware from 'redux-axios-middleware'
 

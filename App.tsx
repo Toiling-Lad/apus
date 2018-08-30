@@ -1,36 +1,46 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { createStore, applyMiddleware } from 'redux'
+import {
+  createStore,
+  applyMiddleware,
+  combineReducers,
+  Reducer,
+  StoreEnhancer
+} from 'redux'
+import { createNavigationReducer } from 'react-navigation-redux-helpers'
 import { Provider } from 'react-redux'
 import axios from 'axios'
 import axiosMiddleware from 'redux-axios-middleware'
+import {
+  RootNavigator,
+  AppWithNavigationState,
+  navigationMiddleware
+} from './navigators/AppNavigator'
 
 import repoReducer from './reducers/repoReducer'
-import RepoList from './components/RepoList'
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
   responseType: 'json'
 })
 
-const store = createStore(repoReducer, applyMiddleware(axiosMiddleware(client)))
+const appReducer: Reducer<any> = combineReducers({
+  navReducer: createNavigationReducer(RootNavigator),
+  repoReducer: repoReducer
+})
 
-export default class App extends Component {
+const appMiddleware: StoreEnhancer<any> = applyMiddleware(
+  axiosMiddleware(client),
+  navigationMiddleware
+)
+
+const store = createStore(appReducer, appMiddleware)
+
+export default class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <RepoList />
-        </View>
+        <AppWithNavigationState />
       </Provider>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    marginTop: 50
-  }
-})

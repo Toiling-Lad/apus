@@ -1,36 +1,65 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import RepoItem, { IRepoItem } from './RepoItem'
+import RepoItem, { IItem } from './RepoItem'
 
 import { listRepos } from '../reducers/repoReducer'
 
-export interface IReduxProps {
+export interface IProps {
   listRepos: (x: string) => void
-  repos: Array<IRepoItem>
+  navigation: any
+  repos: Array<IItem>
+  screenProps?: any
+}
+export interface IState {
+  navReducer: INavReducer
+  repoReducer: IRepoReducer
 }
 
-class RepoList extends Component<IReduxProps, {}> {
+export interface IRepoReducer {
+  loading: boolean
+  repos: Array<IItem>
+  error?: string
+}
+
+export interface INavReducer {
+  index: number
+  isTransitioning: boolean
+  key: string
+  routes: Array<{ key: string; routeName: string }>
+}
+
+export interface IMapStateToProps {
+  (state: IState): { repos: Array<IItem> }
+}
+
+class RepoList extends Component<IProps, IState> {
   componentDidMount() {
     this.props.listRepos('Toiling-Lad')
   }
 
-  render() {
-    const { repos } = this.props
 
+  static navigationOptions = {
+    title: 'RepoList'
+  }
+
+  render() {  
+    // console.log(this.props.navigation)
+    const {params} = this.props.navigation
+    console.log('Params', this.props.navigation)
     return (
       <FlatList
         style={styles.container}
-        data={repos}
-        keyExtractor={(repo: IRepoItem) => repo.id.toString()}
-        renderItem={({ item }) => <RepoItem {...item} />}
+        data={this.props.repos}
+        keyExtractor={(repo: IItem) => repo.id.toString()}
+        renderItem={({ item }) => <RepoItem item={item} navigation={this.props.navigation} />}
       />
     )
   }
 }
 
-const mapStateToProps = (state: any) => {
-  let storedRepositories = state.repos.map((repo: IRepoItem) => ({
+const mapStateToProps: IMapStateToProps = (state: IState) => {
+  let storedRepositories = state.repoReducer.repos.map((repo: IItem) => ({
     key: repo.id,
     ...repo
   }))

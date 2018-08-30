@@ -1,21 +1,31 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 
-export interface IRepoItem {
+export interface IItem {
   name: string
   id: number
   stargazers_count: number
 }
 
-const RepoItem = (item: IRepoItem) => {
-  const { name, id, stargazers_count } = item
+export interface IRepoItem {
+  (item: IItem, navigation: any): JSX.Element
+}
+
+const RepoItem = (props: {item: IItem, navigation: any}) => {
+  const { name, id, stargazers_count } = props.item
+
 
   return (
-    <View style={styles.item}>
-      <Text style={styles.title}>{name}</Text>
-      <Text>{id}</Text>
-      <Text style={styles.stars}>{`${stargazers_count} stars`}</Text>
-    </View>
+    <TouchableHighlight
+      underlayColor="#dddddd"
+      onPress={() => props.navigation.navigate('ItemInfo')}
+      >
+      <View style={styles.item}>
+        <Text style={styles.title}>{name}</Text>
+        <Text>{id}</Text>
+        <Text style={styles.stars}>{`${stargazers_count} stars`}</Text>
+      </View>
+    </TouchableHighlight>
   )
 }
 

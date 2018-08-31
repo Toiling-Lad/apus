@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FlatList, StyleSheet } from 'react-native'
+import { FlatList, StyleSheet, ImagePropsIOS } from 'react-native'
 import { connect } from 'react-redux'
 import RepoItem, { IItem } from './RepoItem'
 

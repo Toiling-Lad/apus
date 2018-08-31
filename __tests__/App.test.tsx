@@ -1,9 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import App from '../App'
+import Root from '../App'
 
-it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON()
-  expect(rendered).toBeTruthy()
+describe('App.tsx', () => {
+  it('renders without crashing', () => {
+    const rendered = renderer.create(<Root />).toJSON()
+    expect(rendered).toBeTruthy()
+  })
 })

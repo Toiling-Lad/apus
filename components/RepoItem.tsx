@@ -11,15 +11,15 @@ export interface IRepoItem {
   (item: IItem, navigation: any): JSX.Element
 }
 
-const RepoItem = (props: {item: IItem, navigation: any}) => {
+const RepoItem = (props: { item: IItem; navigation: any }) => {
   const { name, id, stargazers_count } = props.item
-
 
   return (
     <TouchableHighlight
       underlayColor="#dddddd"
-      onPress={() => props.navigation.navigate('ItemInfo')}
-      >
+      onPress={() =>
+        props.navigation.navigate('ItemInfo', { item: props.item })
+      }>
       <View style={styles.item}>
         <Text style={styles.title}>{name}</Text>
         <Text>{id}</Text>

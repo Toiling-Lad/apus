@@ -38,21 +38,19 @@ class RepoList extends Component<IProps, IState> {
     this.props.listRepos('Toiling-Lad')
   }
 
-
   static navigationOptions = {
     title: 'RepoList'
   }
 
-  render() {  
-    // console.log(this.props.navigation)
-    const {params} = this.props.navigation
-    console.log('Params', this.props.navigation)
+  render() {
     return (
       <FlatList
         style={styles.container}
         data={this.props.repos}
         keyExtractor={(repo: IItem) => repo.id.toString()}
-        renderItem={({ item }) => <RepoItem item={item} navigation={this.props.navigation} />}
+        renderItem={({ item }) => (
+          <RepoItem item={item} navigation={this.props.navigation} />
+        )}
       />
     )
   }

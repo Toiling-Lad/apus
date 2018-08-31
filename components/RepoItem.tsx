@@ -8,10 +8,10 @@ export interface IItem {
 }
 
 export interface IRepoItem {
-  (item: IItem, navigation: any): JSX.Element
+  (props: { item: IItem; navigation: any }): JSX.Element
 }
 
-const RepoItem = (props: { item: IItem; navigation: any }) => {
+const RepoItem: IRepoItem = (props: { item: IItem; navigation: any }) => {
   const { name, id, stargazers_count } = props.item
 
   return (

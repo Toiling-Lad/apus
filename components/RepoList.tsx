@@ -35,7 +35,7 @@ export interface IMapStateToProps {
 
 class RepoList extends Component<IProps, IState> {
   componentDidMount() {
-    this.props.listRepos('Toiling-Lad')
+    this.props.listRepos('Futurice')
   }
 
   static navigationOptions = {
